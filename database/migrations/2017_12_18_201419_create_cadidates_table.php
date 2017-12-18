@@ -15,11 +15,11 @@ class CreateCadidatesTable extends Migration
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('name');
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('city');
             $table->string('state');
+            $table->timestamps();
         });
     }
 
