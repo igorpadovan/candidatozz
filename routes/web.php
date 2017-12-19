@@ -1,16 +1,27 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
-|
-*/
+// use App\Models\Candidate;
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+// $router->get('/', function() use ($router) {
+
+//     $candidates = Candidate::query()->get()->all();
+
+//     return view('candidate', ['candidates' => $candidates]);
+// });
+
+// $router->get('/{id}', function($id) use ($router) {
+//     $candidate = Candidate::query()->findOrFail($id);
+
+//     return view('candidate', ['candidate' => $candidate]);
+// });
+
+
+
+$router->group(['prefix' => 'api/v1'], function($router)
+{
+    $router->get('candidate','CandidateController@index');
+    $router->get('candidate/{id}','CandidateController@getCandidate');
+    $router->post('candidate','CandidateController@createCandidate');
+    $router->put('candidate/{id}','CandidateController@updateCandidate');
+    $router->delete('candidate/{id}','CandidateController@deleteCandidate');
 });
