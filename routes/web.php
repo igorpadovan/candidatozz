@@ -1,19 +1,10 @@
 <?php
 
-// use App\Models\Candidate;
+$router->get('/', function() use ($router) {
 
-// $router->get('/', function() use ($router) {
 
-//     $candidates = Candidate::query()->get()->all();
-
-//     return view('candidate', ['candidates' => $candidates]);
-// });
-
-// $router->get('/{id}', function($id) use ($router) {
-//     $candidate = Candidate::query()->findOrFail($id);
-
-//     return view('candidate', ['candidate' => $candidate]);
-// });
+    return view('candidate');
+});
 
 
 
