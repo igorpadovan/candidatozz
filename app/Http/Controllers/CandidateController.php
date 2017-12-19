@@ -25,7 +25,7 @@ class CandidateController extends Controller
 
     public function getCandidate($id)
     {
-        $candidate = Candidate::find($id);
+        $candidate = Candidate::findOrFail($id);
         return response()->json($candidate);
     }
 
