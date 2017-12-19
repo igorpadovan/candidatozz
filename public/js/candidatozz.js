@@ -17,7 +17,7 @@ var app = new Vue({
         context: this,
         url: "/api/v1/candidate",
         success: function (result) {
-          this.$set(this.candidates, result)
+          $vm.candidates = result;
         }
       })
     },
@@ -42,13 +42,14 @@ var app = new Vue({
         }
       })
     },
-    onDelete: function (comment) {
+    onDelete: function (candidate) {
       $.ajax({
-        context: comment,
+        context: candidate,
         type: "DELETE",
-        url: "/api/v1/candidate/" + comment.id,
+        url: "/api/v1/candidate/" + candidate.id,
       })
-      this.comments.$remove(comment);
+
+      this.candidates.$remove(candidate);
     }
   }
 })

@@ -33,7 +33,7 @@
         </div>
       </form>
 
-      <div class="candidate" v-for="candidate in candidates">
+      <div class="col-md-4 candidates" v-for="candidate in candidates">
         <h3>{{ candidate.name }}</h3>
         <p>{{ candidate.phone }}</p>
         <p>{{ candidate.city }}</p>
