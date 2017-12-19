@@ -13,11 +13,11 @@
 
       <form v-on:submit="onCreate">
         <div class="form-group">
-          <input type="text" class="form-control input-sm" name="name" v-model="name" placeholder="Nome">
+          <input type="text" class="form-control input-sm" required="true" name="name" v-model="name" placeholder="Nome">
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-control input-sm" name="phone" v-model="phone" placeholder="Telefone">
+          <input type="text" class="form-control input-sm" required="true" name="phone" v-model="phone" placeholder="Telefone">
         </div>
 
         <div class="form-group">

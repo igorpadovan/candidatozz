@@ -48,8 +48,8 @@ var app = new Vue({
         type: "DELETE",
         url: "/api/v1/candidate/" + candidate.id,
       })
-
-      this.candidates.$remove(candidate);
+      var index = this.candidates.indexOf(candidate)
+      this.candidates.splice(index, 1);
     }
   }
 })
