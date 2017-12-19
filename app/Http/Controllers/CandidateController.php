@@ -25,13 +25,13 @@ class CandidateController extends Controller
 
     public function getCandidate($id)
     {
-        $candidate = Candidate::findOrFail($id);
+        $candidate = Candidate::find($id);
         return response()->json($candidate);
     }
 
-    public function createCandidate()
+    public function createCandidate(Request $request)
     {
-        $Book = Book::create($request->all());
+        $Book = Candidate::create($request->all());
 
         return response()->json($Book);
 
@@ -49,9 +49,9 @@ class CandidateController extends Controller
         return response()->json($candidate);
     }
 
-    public function deleteCandidate()
+    public function deleteCandidate($id)
     {
-        $candidate  = candidate::find($id);
+        $candidate  = Candidate::findOrFail($id);
         $candidate->delete();
 
         return response()->json('deleted');
